@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ history.title }} — RE Tarixi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/re.css">
+</head>
+<body>
+<div class="back-bar">
+    <div class="container">
+        <a href="{% url 'home' %}#history" class="btn-back">← Tarixga qaytish</a>
+    </div>
+</div>
+<div class="container detail-wrap">
+    <div class="row g-5">
+        <div class="col-md-5">
+            {% if history.image %}
+                <img src="{{ history.image.url }}" alt="{{ history.title }}" class="detail-img">
+            {% else %}
+                <div class="detail-no-img">{{ history.year }}</div>
+            {% endif %}
+        </div>
+        <div class="col-md-7">
+            <p class="detail-year">{{ history.year }}</p>
+            <h1 class="detail-title">{{ history.title }}</h1>
+            <div class="detail-divider"></div>
+            <p class="detail-label">Voqea tavsifi</p>
+            <p class="detail-text">{{ history.description }}</p>
+        </div>
+    </div>
+</div>
+<footer class="re-footer"><p>Resident Evil Database © 2024</p></footer>
+</body>
+</html>
