@@ -11,6 +11,7 @@ ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://resident-evil-site-production.up.railway.app',
+    'https://resident-evil-site.onrender.com',
 ]
 
 INSTALLED_APPS = [
